@@ -24,13 +24,16 @@ public class InsertTest {
 			//Statement applicantIdinfo=conn.createStatement();
 			Scanner scan=new Scanner(System.in);
 			int appid=scan.nextInt();
-			
+			String name=scan.next();
+			String email=scan.next();
+			String address=scan.next();
+			String mobileNo=scan.next();
 			PreparedStatement pst = conn.prepareStatement("INSERT INTO BANK_APPLICANT VALUES (?,?,?,?,?,?) ");
 			pst.setInt(1, appid);
-			pst.setString(2, "ROBERT");
-			pst.setString(3, "robert@gmail.com");
-			pst.setString(4, "Mumbai");
-			pst.setString(5, "6667778880");
+			pst.setString(2, name);
+			pst.setString(3, email);
+			pst.setString(4, address);
+			pst.setString(5, mobileNo);
 			
 			Calendar cal = Calendar.getInstance();
 			java.util.Date date = cal.getTime();
