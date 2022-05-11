@@ -1,0 +1,43 @@
+package oneToMany;
+
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+public class Customer {
+	
+		@Id
+	 
+	 @Column(name="CUSTID")   
+	 
+	 private Integer custid;
+	 @Column(name="NAME")                                            //   VARCHAR2(45)
+	 private String custName;
+	 @Column(name="ADDRESS")                                          //  VARCHAR2(40)
+	 private String custAdd;
+	 @Column(name="CITY")                                              // VARCHAR2(30)
+	 private String custCity;
+	 @Column(name="STATE")                                             // VARCHAR2(2)
+	 private String custState;
+	 @Column(name="ZIP")                                               // VARCHAR2(9)
+	 private String CustZip;
+	 @Column(name="AREA")                                              // NUMBER(3)
+	 private String custArea;
+	 @Column(name="PHONE")                                             // VARCHAR2(9)
+	 private String custPhone;
+	 
+	 @ManyToOne()
+	 @JoinColumn(name="REPID")       //foreign key                              // NOT NULL NUMBER(4)
+	 private Customer CustRepId;
+	 
+	 @Column(name="CREDITLIMIT")                                      //  NUMBER(9,2)
+	 private double custLimit;
+	 @Column(name="COMMENTS")                                         //  LONG
+	 private String custComments;
+	 @JoinColumn(name="REPID")
+	 private Employee employee;
+
+	
+	  
+}
